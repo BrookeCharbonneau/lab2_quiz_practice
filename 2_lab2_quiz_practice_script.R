@@ -9,6 +9,10 @@ analytic_data_female <- select(analytic_data.female, pos_affect,neg_affect, Extr
 # View(analytic_data_male)
 # View(analytic_data_female)
 
+## Save data sets
+write_csv(analytic_data_male,path="analytic_data_male.csv")
+write_csv(analytic_data_female,path="analytic_data_female.csv")
+
 ## Create 3 correlation tables
 apa.cor.table(analytic_data,filename="Table_1_Overall.doc",table.number=1)
 apa.cor.table(analytic_data_male,filename="Table_2_Male.doc",table.number=2)

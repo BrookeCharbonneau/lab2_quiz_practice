@@ -37,7 +37,7 @@ analytic_data <- cbind(sex,pos_affect,neg_affect,Extraversion,Neuroticism)
 
 # View(analytic_data)
 
-write_csv(analytic_data,path="anaytic_data.csv")
+write_csv(analytic_data,path="analytic_data.csv")
 
 str(analytic_data)
 
