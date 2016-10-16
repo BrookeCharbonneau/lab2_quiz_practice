@@ -1,6 +1,7 @@
 ## Creating analytic data file
 
 library(tidyverse)
+library(apaTables)
 
 raw_data <- read_csv(file="raw_data.csv")
 
@@ -26,6 +27,12 @@ is_bad_value <- pos_affect_items<0 | pos_affect_items>3
 pos_affect_items[is_bad_value] <- NA
 # View(pos_affect_items)
 
+is_bad_value <- Neuroticism<0 | Neuroticism>24
+Neuroticism[is_bad_value] <- NA
+
+is_bad_value <- Extraversion<0 | Extraversion>24
+Extraversion[is_bad_value] <- NA
+
 psych::describe(Neuroticism)
 psych::describe(Extraversion)
 
@@ -33,7 +40,7 @@ psych::describe(Extraversion)
 pos_affect <- psych::alpha(as.data.frame(pos_affect_items),check.keys=FALSE)$scores
 neg_affect <- psych::alpha(as.data.frame(neg_affect_items),check.keys=FALSE)$scores
 
-analytic_data <- cbind(sex,pos_affect,neg_affect,Extraversion,Neuroticism)
+analytic_data <- cbind(sex,pos_affect,neg_affect,Neuroticism, Extraversion)
 
 # View(analytic_data)
 

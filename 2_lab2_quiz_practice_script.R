@@ -3,9 +3,9 @@ library (apaTables)
 
 ## Create 3 filtered data sets
 analytic_data.male <- filter(analytic_data, sex=="Male")
-analytic_data_male <- select(analytic_data.male, pos_affect, neg_affect, Extraversion, Neuroticism)
+analytic_data_male <- select(analytic_data.male, pos_affect, neg_affect, Neuroticism, Extraversion)
 analytic_data.female <- filter(analytic_data, sex=="Female")
-analytic_data_female <- select(analytic_data.female, pos_affect,neg_affect, Extraversion,Neuroticism)
+analytic_data_female <- select(analytic_data.female, pos_affect,neg_affect, Neuroticism, Extraversion)
 # View(analytic_data_male)
 # View(analytic_data_female)
 
